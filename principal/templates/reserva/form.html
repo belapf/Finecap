@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block center %}
+    <h2> Formulário de Reserva.</h2>
+       
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nome" class="form-label">cnpj</label>
+            {{ form.cnpj }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="nome" class="form-label">nome</label>
+            {{ form.nome }}
+        </div>
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">categoria</label>
+            {{ form.categoria }}
+        </div>
+        
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">quitado</label>
+            {{ form.quitado }}
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>    
+{% endblock %}
+   

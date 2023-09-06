@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block center %}
+<h2>Listar stands</h2>
+
+<a href="{% url 'stand_criar' %}" class="btn btn-success mb-3">Novo stand</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>localizacao</th>
+      <th>valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--abre o for -->
+    {% for stand in stands %}  
+    <tr>
+      <td>{{ stand.localizacao }}</td>
+      <td>{{ stand.valor }}</td>
+      <!--forma diferente de chamar as urls-->
+      <td>
+        <a href="{% url 'stand_editar' id=stand.id %}" class="btn btn-primary btn-sm">Editar</a>
+        <a href="{% url 'stand_remover' id=stand.id %}" class="btn btn-danger btn-sm">Remover</a>
+      </td>
+    </tr>
+    <!--fecha o for-->
+    {% endfor %}
+
+
+{% endblock %}

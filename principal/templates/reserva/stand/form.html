@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block center %}
+
+<form method="post">
+     {% csrf_token %}
+
+     <div class="mb-3">
+        <label for="nome" class="form-label">localizacao</label>
+        {{form.localizacao}}
+     </div>
+
+     <div class="mb-3">
+        <label for="sigla" class="form-label">valor</label>
+        {{form.valor}}
+     </div>
+
+     <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+
+{% endblock %}
